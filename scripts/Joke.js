@@ -1,11 +1,18 @@
 // Define and export a function called Joke.
 // It should accept a joke object as a parameter and return an html string
 
-export const Joke = (jokeObj) => {
+export const JokeSetup = (jokeObj) => {
   let makeJokeHTMLfriendly = `
-    <p>Setup That Joke: ${jokeObj.setup}</p>
-    <p>Gimme The Punchline: ${jokeObj.punchline}</p>
+    <p>${jokeObj.setup}</p>
   `;
 
   return makeJokeHTMLfriendly;
+};
+
+export const JokePunchline = (jokeObj) => {
+  let makeJokeHTMLfriendlyAgain = `
+    ${jokeObj.punchline}
+    `;
+
+  return makeJokeHTMLfriendlyAgain;
 };
