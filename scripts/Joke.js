@@ -3,7 +3,7 @@
 
 export const JokeSetup = (jokeObj) => {
   let makeJokeHTMLfriendly = `
-    <p>Setup That Joke: ${jokeObj.setup}</p>
+    <p>${jokeObj.setup}</p>
   `;
 
   return makeJokeHTMLfriendly;
