@@ -3,8 +3,7 @@ let joke;
 export const getJoke = () => {
   return fetch("https://official-joke-api.appspot.com/random_joke")
     .then((response) => response.json())
-    .then((data) => (joke = data))
-    .then(() => console.log(joke));
+    .then((data) => (joke = data));
 };
 
 export const useJoke = () => {
