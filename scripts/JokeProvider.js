@@ -1,9 +1,14 @@
 let joke;
 
-export const useJoke = () => {
+export const getJoke = () => {
   return fetch("https://official-joke-api.appspot.com/random_joke")
     .then((response) => response.json())
-    .then(console.log);
+    .then((data) => (joke = data))
+    .then(() => console.log(joke));
+};
+
+export const useJoke = () => {
+  return joke;
 };
 
 // 1. define and export a useJoke function that simply returns the joke object.

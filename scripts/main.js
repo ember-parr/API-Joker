@@ -1,15 +1,19 @@
-import { useJoke } from "./JokeProvider.js";
-import { JokeSetup, JokePunchline } from "./Joke.js";
+import { getJoke, useJoke } from "./JokeProvider.js";
+import { Joke } from "./Joke.js";
 
 const jokeBtn = document.querySelector(".request-joke-btn");
 
 const setupElement = document.querySelector(".joke-setup");
-const punchlineElement = document.querySelector(".joke-punchline");
 
 jokeBtn.addEventListener("click", (e) => {
   console.log("I should be grabbing a joke now...");
-  useJoke();
-  JokeSetup();
-  JokePunchline();
+  let reallyGoodJoke = "";
+
+  getJoke().then((response) => {
+    reallyGoodJoke = useJoke();
+    setupElement.innerHTML += Joke(reallyGoodJoke);
+    console.log("now THAT is a good joke: ", reallyGoodJoke);
+  });
+
   // TODO: fetch a joke from the Joke API and render it to the DOM
 });
